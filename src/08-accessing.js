@@ -103,8 +103,10 @@ function getFirstPhoneNumber(person) {}
  *  getLastPhoneNumber(person);
  *  //> 7185558611
  */
-function getLastPhoneNumber(person) {}
-
+function getLastPhoneNumber(person) {
+  const arr = person.numbers;
+  return arr[arr.length - 1];
+}
 /**
  * getFullName()
  * ---------------------
@@ -116,7 +118,10 @@ function getLastPhoneNumber(person) {}
  *  getFullName(person);
  *  //> "Rachel Eleanor Rojas"
  */
-function getFullName(person) {}
+function getFullName(person) {
+  const user = person.names;
+  return `${user.first} ${user.middle} ${user.last}`;
+}
 
 /**
  * getCityAndState()
@@ -171,7 +176,16 @@ function getFullAddress(person) {}
       numbers: [7185550921, 7185558611],
     };
  */
-function getFlatObject(person) {}
+
+function getFlatObject(person) {
+  const person2 = {
+    ...person.names,
+    ...person.address,
+    numbers: [...person.numbers],
+  };
+
+  return person2;
+}
 
 // Do not change the code below.
 module.exports = {

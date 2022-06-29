@@ -14,7 +14,9 @@
  *  isEqual(10, "10");
  *  //> false
  */
-function isEqual(a, b) {}
+function isEqual(a, b) {
+  return a === b;
+}
 
 /**
  * findLarger()
@@ -28,7 +30,10 @@ function isEqual(a, b) {}
  *  findLarger(19, 7);
  *  //> 19
  */
-function findLarger(a, b) {}
+function findLarger(a, b) {
+  return a > b ? a : b;
+  // Math.max(a,b)
+}
 
 /**
  * findLargerOrTie()
@@ -45,7 +50,13 @@ function findLarger(a, b) {}
  *  findLargerOrTie(0, 0);
  *  //> "tie"
  */
-function findLargerOrTie(a, b) {}
+function findLargerOrTie(a, b) {
+  if (a === b) return "tie";
+  if (a > b) return a;
+  return b;
+  //this combines line 55 and 56 using a ternary
+  // return a > b ? a : b;
+}
 
 /**
  * positiveNegativeOrZero()
@@ -65,7 +76,10 @@ function findLargerOrTie(a, b) {}
  *  positiveNegativeOrZero(1);
  *  //> "Positive"
  */
-function positiveNegativeOrZero(a) {}
+function positiveNegativeOrZero(a) {
+  if (a === 0) return "Zero";
+  return a > 0 ? "Positive" : "Negative";
+}
 
 /**
  * aroundTheWorldGreeting()
@@ -86,7 +100,26 @@ function positiveNegativeOrZero(a) {}
  *  aroundTheWorldGreeting();
  *  //> "Hello World"
  */
-function aroundTheWorldGreeting(language) {}
+function aroundTheWorldGreeting(language) {
+  //shorter
+  if (language === "spanish") {
+    //if the code in your if block is more than one line use curly braces
+    //line 108 is example of more than one line but not part of solution
+    let x = 0;
+
+    return "Hola Mundo";
+  }
+  if (language === "german") {
+    return "Hallo Welt";
+  }
+  return "Hello World";
+
+  // let text = "";
+  // if (language === "spanish") text = "Hola Mundo";
+  // else if (language === "german") text = "Hallo Welt";
+  // else text = "Hello World";
+  // return text;
+}
 
 /**
  * aroundTheWorldGreetingWithSwitch()
@@ -109,7 +142,23 @@ function aroundTheWorldGreeting(language) {}
  *  aroundTheWorldGreetingWithSwitch();
  *  //> "Hello World"
  */
-function aroundTheWorldGreetingWithSwitch(language) {}
+function aroundTheWorldGreetingWithSwitch(language) {
+  let text = "";
+  switch (language) {
+    case "spanish":
+      // return "Hola Mundo";
+      text = "Hola Mundo";
+      break;
+    case "german":
+      // return "Hallo Welt";
+      text = "Hallo Welt";
+      break;
+    default:
+      "Hello World";
+    // return "Hello World";
+  }
+  return text;
+}
 
 /**
  * calculateLetterGrade()
@@ -128,7 +177,26 @@ function aroundTheWorldGreetingWithSwitch(language) {}
  *  calculateLetterGrade(99);
  *  //> "A"
  */
-function calculateLetterGrade(grade) {}
+function calculateLetterGrade(grade) {
+  let grades = "";
+  switch (true) {
+    case grade >= 90:
+      grades = "A";
+      break;
+    case grade >= 80:
+      grades = "B";
+      break;
+    case grade >= 70:
+      grades = "C";
+      break;
+    case grade >= 60:
+      grades = "D";
+      break;
+    default:
+      grades = "F";
+  }
+  return grades;
+}
 
 /**
  * animalCounts()
@@ -146,7 +214,11 @@ function calculateLetterGrade(grade) {}
  *  animalCounts("pig", 1);
  *  //> "1 pig"
  */
-function animalCounts(animal, numberOfAnimals) {}
+function animalCounts(animal, numberOfAnimals) {
+  return numberOfAnimals === 1
+    ? `${numberOfAnimals} ${animal}`
+    : `${numberOfAnimals} ${animal}s`;
+}
 
 /**
  * evenOrOdd()
@@ -159,11 +231,13 @@ function animalCounts(animal, numberOfAnimals) {}
  * EXAMPLE:
  *  evenOrOdd(11);
  *  //> "Odd"
- * 
+ *
  *  evenOrOdd(48);
  *  //> "Even"
  */
-function evenOrOdd(a) {}
+function evenOrOdd(a) {
+  return a % 2 === 0 ? "Even" : "Odd";
+}
 
 /**
  * evenOrOddWithTernary()

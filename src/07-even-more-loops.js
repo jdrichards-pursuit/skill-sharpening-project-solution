@@ -28,7 +28,17 @@ function shoutForLoop(array) {}
  *  shoutWhileLoop([ "A", "Very", "Happy", "Array" ]);
  *  //> [ "A!", "Very!", "Happy!", "Array!" ];
  */
-function shoutWhileLoop(array) {}
+function shoutWhileLoop(array) {
+  let newArr = [];
+  let i = 0;
+
+  while (i < array.length) {
+    newArr.push(`${array[i]}!`);
+    i++;
+  }
+
+  return newArr;
+}
 
 /**
  * shoutForOfLoop()
@@ -57,7 +67,15 @@ function shoutForOfLoop(array) {}
  *  sumArray([ 10, 0, 10, 11 ]);
  *  //> 31
  */
-function sumArray(array) {}
+function sumArray(array) {
+  let total = 0;
+
+  for (let num of array) {
+    total += num;
+  }
+
+  return total;
+}
 
 /**
  * oddArray()
@@ -96,7 +114,18 @@ function evenArray(array) {}
  *  findSmallest([ 0, 11, -2, 5 ]);
  *  //> -2
  */
-function findSmallest(array) {}
+function findSmallest(array) {
+  // cannot use Math library Math.min or anything like that
+  // cannot use any methods only for loop
+  let num = array[0];
+  for (let i = 1; i < array.length; i++) {
+    if (array[i] < num) {
+      num = array[i];
+    }
+  }
+
+  return num;
+}
 
 /**
  * findLargest()
@@ -126,7 +155,10 @@ function findLargest(array) {}
  *  findEqual([ 0, 11, -2, 5 ], 9);
  *  //> false
  */
-function findEqual(array, selected) {}
+function findEqual(array, selected) {
+  if (array.includes(selected)) return true;
+  return false;
+}
 
 /**
  * removeDuplicates()
@@ -143,7 +175,15 @@ function findEqual(array, selected) {}
  *  //> [ 1, 11, 2, 3, 4, 9 ]
  */
 
-function removeDuplicates(array) {}
+function removeDuplicates(array) {
+  let newArr = [array[0]];
+  for (let i = 1; i < array.length; i++) {
+    if (newArr.includes(array[i])) continue;
+    else newArr.push(array[i]);
+  }
+
+  return newArr;
+}
 
 // Do not change any code below this line.
 module.exports = {
